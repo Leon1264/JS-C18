@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 300px;
+            background-color: lightblue;
+            border:2px solid black;
+            font-size: xx-large;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function showTime(){
+        var date =new Date
+        var s = date.getSeconds()
+        var m = date.getMinutes()
+        var h = date.getHours()
+        var session = "AM"
+
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s
+        
+        if(h == 0){
+            h = 12;
+        }
+    
+            if(h > 12){
+                h = h - 12;
+                session = "PM";
+            }
+        times = h+" : "+m+" : "+s+ " " + session
+        document.getElementById("div1").innerText = times
+        setTimeout(showTime,1000)
+
+        
+        
+        }
+
+        showTime();
+    </script>
+
+    <center><h1>CLOCK</h1>
+    <div id="div1" >
+        <button onclick="showTime()">Click</button>
+        <br>
+        <br>
+        
+        
+    </div>
+    </center>
+
+
+</body>
+</html>
